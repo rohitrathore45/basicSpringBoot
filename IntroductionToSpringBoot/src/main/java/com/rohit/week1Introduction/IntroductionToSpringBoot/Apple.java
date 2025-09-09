@@ -1,11 +1,22 @@
 package com.rohit.week1Introduction.IntroductionToSpringBoot;
 
 
-import org.springframework.stereotype.Component;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
-@Component
 public class Apple {
+
     void eating(){
         System.out.println("I am eating an Apple");
+    }
+
+    @PostConstruct
+    void callThisBeforeAppleIsUsed(){
+        System.out.println("Creating the apple before use");
+    }
+
+    @PreDestroy
+    void callThisBeforeDestroy(){
+        System.out.println("Destroying the Apple bean");
     }
 }
